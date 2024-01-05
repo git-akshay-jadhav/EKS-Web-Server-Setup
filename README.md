@@ -1,5 +1,5 @@
 
-# Nagios Monitoring Setup for EKS and Docker
+# EKS-Web-DB-Setup
 
 ## Overview
 
@@ -8,15 +8,12 @@ This repository provides configurations and scripts to set up Nagios monitoring 
 ## Contents
 
 1. **Init Containers Manifest for EKS**
-   - Location: [eks/init-container-manifest.yaml](eks/init-container-manifest.yaml)
    - Description: YAML manifest defining a Kubernetes Pod with an init container for initializing the web server.
 
 2. **Dockerfile for EKS**
-   - Location: [Dockerfile](Dockerfile)
    - Description: Dockerfile for building an image based on the latest nginx image. Installs necessary dependencies and sets up the web application files.
 
 3. **Ansible Playbook for EKS**
-   - Location: [ansible/playbook.yaml](ansible/playbook.yaml)
    - Description: Ansible playbook for installing Nginx and MySQL client on EKS nodes, copying web application files, and starting Nginx.
 
 4. **Configuring Nagios Access to Linux Clients**
