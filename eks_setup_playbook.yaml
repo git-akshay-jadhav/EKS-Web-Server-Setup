@@ -1,0 +1,24 @@
+---
+- hosts: akshay-eks-nodes
+  become: yes
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Install MySQL client
+      apt:
+        name: mysql-client
+        state: present
+
+    - name: Copy web application files
+      copy:
+        src: ./akshay-web-app
+        dest: /usr/share/nginx/html
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes

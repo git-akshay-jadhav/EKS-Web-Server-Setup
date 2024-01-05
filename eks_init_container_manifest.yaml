@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: akshay-web-app
+spec:
+  containers:
+    - name: init-container
+      image: busybox
+      command: ['sh', '-c', 'echo Initializing web server... && sleep 10']
+    - name: main-container
+      image: akshay-web-server-image
